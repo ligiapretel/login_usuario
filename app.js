@@ -17,7 +17,11 @@ app.use(express.urlencoded({ extended: false }));
 //Só conseguimos usar os cookies se inicializarmos ele aqui
 app.use(cookieParser());
 // O secret tem a função de criptografar a session e precisamos dela para criptografar e descriptografar. Não deve ser enviada ao github. Pode ser qualquer string
-app.use(session({ secret: "senha" }));
+app.use(session({ 
+    secret: "senha",
+    resave: true,
+    saveUninitialized: true 
+}));
 
 //  Configura pasta estática para acesso externo
 app.use(express.static(path.join(__dirname, "public")));
