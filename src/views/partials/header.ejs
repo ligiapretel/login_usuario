@@ -2,7 +2,7 @@
     <div>
         <a href="/">Página inicial</a>
         <!-- Caso a variável user exist (se está logado) e admin exista, eu quero que mostre a opção administrador -->
-        <% if (locals.user && locals.admin) { %>
+        <% if (locals.user && locals.admin === "true") { %>
             |
             <a href="/admin">Administrador</a>
         <% } %>
