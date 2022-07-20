@@ -68,4 +68,14 @@
     "admin": false,
     "criadoEm": "2022-07-19T18:26:39.999Z",
     "modificadoEm": "2022-07-19T18:26:39.999Z"
+}, {
+    "id": 8,
+    "nome": "Bau",
+    "sobrenome": "Nilha",
+    "apelido": "BauBau",
+    "senha": "$2b$10$MOALrRceF.kun/y.HvZU3ebuElrXq46uOVptFSwCAXzvH9rnH1N4K",
+    "email": "bau@email.com",
+    "admin": false,
+    "criadoEm": "2022-07-19T23:33:39.818Z",
+    "modificadoEm": "2022-07-19T23:33:39.818Z"
 }]

@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const bcrypt = require("../helpers/bcrypt");
 
 const authController = {
     // Tela para cadastro do usuário
@@ -56,7 +57,7 @@ const authController = {
             nome,
             sobrenome,
             apelido,
-            senha,
+            senha: bcrypt.generateHash(senha),//criptografando a senha
             email,
             admin: false,
             //Adicionando datas de criação e modificação (que na criação serão iguais)
@@ -102,10 +103,12 @@ const authController = {
         //Buscar em users se existe esse email e se a senha corresponde a esse usuário
             const userAuth = users.find(user=>{
                 if(user.email===email){
-                    if(user.senha===senha){
+                    if(bcrypt.compareHash(senha,user.senha)){
                         // Se existir o usuário e se a senha corresponder a esse usuário, retorne true
                         return true;
                     }
+                    //O if acima é a mesma coisa que a linha abaixo
+                    //return bcrypt.compareHash(senha,user.senha)
                 }
             });
 
